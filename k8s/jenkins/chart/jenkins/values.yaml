@@ -5,6 +5,8 @@ jenkins:
   persistence:
     storageClass: null
     size: 8Gi
+  runSetupWizard: false
+  plugins: null
 
 tls:
   base64EncodedPrivateKey: null
