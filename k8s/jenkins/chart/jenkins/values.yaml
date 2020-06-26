@@ -6,70 +6,7 @@ jenkins:
     storageClass: null
     size: 8Gi
   runSetupWizard: false
-  plugins:
-    - pipeline-build-step
-    - ssh-credentials
-    - workflow-api
-    - durable-task
-    - pipeline-graph-analysis
-    - pipeline-rest-api
-    - pipeline-milestone-step
-    - variant
-    - git
-    - handlebars
-    - google-kubernetes-engine
-    - credentials-binding
-    - apache-httpcomponents-client-4-api
-    - google-oauth-plugin
-    - bouncycastle-api
-    - workflow-cps
-    - pipeline-input-step
-    - scm-api
-    - pipeline-stage-step
-    - configuration-as-code
-    - structs
-    - matrix-auth
-    - junit
-    - workflow-step-api
-    - kubernetes-client-api
-    - plain-credentials
-    - workflow-basic-steps
-    - pipeline-model-definition
-    - mailer
-    - ace-editor
-    - momentjs
-    - branch-api
-    - script-security
-    - cloudbees-folder
-    - pipeline-stage-tags-metadata
-    - jackson2-api
-    - kubernetes
-    - pipeline-stage-view
-    - workflow-job
-    - git-server
-    - workflow-scm-step
-    - jdk-tool
-    - credentials
-    - trilead-api
-    - command-launcher
-    - jquery-detached
-    - snakeyaml-api
-    - workflow-support
-    - ldap
-    - matrix-project
-    - pipeline-model-api
-    - authentication-tokens
-    - workflow-durable-task-step
-    - workflow-cps-global-lib
-    - lockable-resources
-    - workflow-aggregator
-    - kubernetes-credentials
-    - oauth-credentials
-    - pipeline-model-extensions
-    - display-url-api
-    - git-client
-    - jsch
-    - workflow-multibranch
+  plugins: null
 
 tls:
   base64EncodedPrivateKey: null
