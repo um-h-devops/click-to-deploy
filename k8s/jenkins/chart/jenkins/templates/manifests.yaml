@@ -26,7 +26,7 @@ spec:
       containers:
       - name: jenkins-master
         image: "{{ .Values.jenkins.image.repo }}:{{ .Values.jenkins.image.tag }}"
-        command: ["sh", "-c", "/usr/local/bin/install-plugins.sh {{ range .Values.jenkins.plugins }} {{ . }} {{ end }} && cp /tmp/jenkins.yaml /var/jenkins_home/jenkins.yaml && /usr/local/bin/jenkins.sh"]
+        command: ["sh", "-c", "/usr/local/bin/install-plugins.sh {{ range .Values.jenkins.plugins }} {{ . }}{{ end }} && cp /tmp/jenkins.yaml /var/jenkins_home/jenkins.yaml && /usr/local/bin/jenkins.sh"]
         ports:
         - containerPort: 8080
         - containerPort: 50000
