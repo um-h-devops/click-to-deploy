@@ -51,6 +51,8 @@ spec:
           value: "-Xmx1800m -Djenkins.install.runSetupWizard={{ .Values.jenkins.runSetupWizard }}"
         - name: INSTALL_MONITORING
           value: 'true'
+        - name: TZ
+          value: "{{ .Values.timezone }}"
         resources:
           limits:
             memory: 2.0Gi
