@@ -33,7 +33,7 @@ spec:
         volumeMounts:
         - name: {{ .Release.Name }}-jenkins-pvc
           mountPath: /var/jenkins_home
-        - name: {{ .Release.Name }}-jenkins-casc-yml
+        - name: {{ .Release.Name }}-jenkins-casc-yaml
           mountPath: /tmp/jenkins.yaml
           subPath: jenkins.yaml
         readinessProbe:
