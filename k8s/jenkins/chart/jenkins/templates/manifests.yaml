@@ -125,8 +125,10 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: {{ .Release.Name }}-jenkins-ui
+{{ if .Values.gcp_load_balancer.global_static_ip }}
   annotations:
     kubernetes.io/ingress.global-static-ip-name: {{ .Values.gcp_load_balancer.global_static_ip }}
+{{ end }}
   labels:
     app.kubernetes.io/name: {{ .Release.Name }}
     app.kubernetes.io/component: jenkins-master
