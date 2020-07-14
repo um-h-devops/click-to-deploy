@@ -30,7 +30,7 @@ spec:
       url: https://jenkins.io/doc/
     notes: |-
       # Prerequisites
-      
+
       You'll need the following tools in your environment:
 
       *  [gcloud](https://cloud.google.com/sdk/gcloud/): if gcloud has not been configured yet, then configure gcloud by following the [gcloud Quickstart](https://cloud.google.com/sdk/gcloud/).
