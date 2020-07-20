@@ -19,3 +19,6 @@ spec:
     targetPort: https
   selector: *GitLabLabels
   type: {{ .Values.gitlab.serviceType }}
+{{ if .Values.gitlab.serviceType == "LoadBalancer" }}
+  loadBalancerIP: {{ .Values.gitlab.loadBalancerIP }}
+{{ end }}
