@@ -12,6 +12,7 @@ gitlab:
   ## ref: http://kubernetes.io/docs/user-guide/services/#publishing-services---service-types
   ##
   serviceType: LoadBalancer
+  loadBalancerIP: null
 
   ## Configure external service ports
   sshPort: 22
