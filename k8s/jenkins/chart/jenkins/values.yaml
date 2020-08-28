@@ -7,6 +7,7 @@ jenkins:
     size: 8Gi
   runSetupWizard: false
   plugins: null
+  serviceAccount: "default"
 gcp_load_balancer:
   use_global_static_ip: null
   global_static_ip_name: null
