@@ -8,9 +8,11 @@ jenkins:
   runSetupWizard: false
   plugins: null
   serviceAccount: "default"
-gcp_load_balancer:
-  use_global_static_ip: null
+gcp:
+  use_global_static_ip: false
   global_static_ip_name: null
+  use_nodepool: false
+  nodepool_name: null
 tls:
   base64EncodedPrivateKey: null
   base64EncodedCertificate: null
