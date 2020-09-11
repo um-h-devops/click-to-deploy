@@ -14,9 +14,9 @@ spec:
     metadata:
       labels: *JenkinsLabels
     spec:
-      {{- if .Values.gke.use_nodepool }}
+      {{- if .Values.gcp.use_nodepool }}
       nodeSelector:
-        cloud.google.com/gke-nodepool: {{ .Values.gke.nodepool_name }}
+        cloud.google.com/gke-nodepool: {{ .Values.gcp.nodepool_name }}
       {{- end }}
       serviceAccountName: "{{ .Values.jenkins.serviceAccount }}"
       initContainers:
