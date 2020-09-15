@@ -13,6 +13,8 @@ gcp:
   global_static_ip_name: null
   use_nodepool: false
   nodepool_name: null
+  use_ssl_policy: false
+  ssl_policy_name: null
 tls:
   base64EncodedPrivateKey: null
   base64EncodedCertificate: null
