@@ -3,7 +3,8 @@ jenkins:
     repo: null
     tag: null
   persistence:
-    storageClass: null
+    storageClassName: "delete-reclaimPolicy"
+    reclaimPolicy: "Delete"
     size: 8Gi
   runSetupWizard: false
   plugins: null
