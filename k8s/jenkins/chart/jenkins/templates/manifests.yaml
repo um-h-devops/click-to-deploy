@@ -135,6 +135,9 @@ metadata:
   {{- if .Values.gcp.use_global_static_ip }}
     kubernetes.io/ingress.global-static-ip-name: {{ .Values.gcp.global_static_ip_name }}
   {{- end }}
+  {{- if .Values.gcp.use_ssl_policy }}
+    networking.gke.io/v1beta1.FrontendConfig: {{ .Values.gcp.ssl_policy_name }}
+  {{- end }}
   labels:
     app.kubernetes.io/name: {{ .Release.Name }}
     app.kubernetes.io/component: jenkins-master
