@@ -134,6 +134,15 @@ data:
   tls.crt: |
 {{ .Values.tls.base64EncodedCertificate | indent 4 }}
 type: kubernetes.io/tls
+{{ if .Values.gcp.use_ssl_policy }}
+---
+apiVersion: networking.gke.io/v1beta1
+kind: FrontendConfig
+metadata:
+  name: {{ .Values.gcp.ssl_policy_name }}
+spec:
+  sslPolicy: {{ .Values.gcp.ssl_policy_name }}
+{{ end }}
 ---
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
