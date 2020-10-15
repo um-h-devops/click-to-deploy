@@ -156,7 +156,7 @@ spec:
 apiVersion: cloud.google.com/v1
 kind: BackendConfig
 metadata:
-  name: {{ .Relase.Name }}-backendconfig
+  name: {{ .Release.Name }}-backendconfig
 spec:
   healthCheck:
     checkIntervalSec: 15
