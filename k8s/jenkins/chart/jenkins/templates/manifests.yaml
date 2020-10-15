@@ -50,6 +50,12 @@ spec:
         - name: {{ .Release.Name }}-jenkins-casc-yaml
           mountPath: /tmp/jenkins.yaml
           subPath: jenkins.yaml
+        livenessProbe:
+          httpGet:
+            path: /login
+            port: 8080
+          periodSeconds: 10
+          initialDelaySeconds: 30
         readinessProbe:
           httpGet:
             path: /login
