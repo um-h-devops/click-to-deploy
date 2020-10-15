@@ -98,11 +98,14 @@ spec:
 ---
 apiVersion: v1
 kind: Service
+
 metadata:
   name: {{ .Release.Name }}-jenkins-ui
   labels: &JenkinsLabels
     app.kubernetes.io/name: {{ .Release.Name }}
     app.kubernetes.io/component: jenkins-master
+  annotations:
+    cloud.google.com/backend-config: '{"ports": {"ui":"{{ .Release.Name }}-backendconfig"}}'
 spec:
   type: NodePort
   selector: *JenkinsLabels
@@ -149,6 +152,18 @@ metadata:
 spec:
   sslPolicy: {{ .Values.gcp.ssl_policy_name }}
 {{ end }}
+---
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: {{ .Relase.Name }}-backendconfig
+spec:
+  healthCheck:
+    checkIntervalSec: 15
+    timeoutSec: 1
+    port: 8080
+    type: HTTP
+    requestPath: /login
 ---
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
