@@ -4,6 +4,7 @@ jenkins:
     tag: null
   persistence:
     storageClassName: "delete-reclaimpolicy"
+    pvName: null
     reclaimPolicy: "Delete"
     size: 8Gi
   runSetupWizard: false
