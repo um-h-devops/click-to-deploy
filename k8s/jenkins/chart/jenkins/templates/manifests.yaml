@@ -151,6 +151,9 @@ metadata:
   name: {{ .Values.gcp.ssl_policy_name }}
 spec:
   sslPolicy: {{ .Values.gcp.ssl_policy_name }}
+  redirectToHttps:
+    enabled: true
+    responseCodeName: PERMANENT_REDIRECT
 {{ end }}
 ---
 apiVersion: cloud.google.com/v1
@@ -170,7 +173,7 @@ kind: Ingress
 metadata:
   name: {{ .Release.Name }}-jenkins-ui
   annotations:
-    kubernetes.io/ingress.allow-http: "false"
+    kubernetes.io/ingress.allow-http: "true"
   {{- if .Values.gcp.use_global_static_ip }}
     kubernetes.io/ingress.global-static-ip-name: {{ .Values.gcp.global_static_ip_name }}
   {{- end }}
