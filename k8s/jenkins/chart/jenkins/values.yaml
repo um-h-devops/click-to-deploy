@@ -2,6 +2,9 @@ jenkins:
   image:
     repo: null
     tag: null
+  jnlpImage:
+    repo: "docker.io/jenkins/inbound-agent"
+    tag: "alpine"
   persistence:
     storageClassName: "delete-reclaimpolicy"
     reclaimPolicy: "Delete"

@@ -68,7 +68,7 @@ spec:
         - name: JENKINS_OPTS
           value: ''
         - name: JAVA_OPTS
-          value: "-Xmx1800m -Djenkins.install.runSetupWizard={{ .Values.jenkins.runSetupWizard }}"
+          value: "-Xmx1800m -Djenkins.install.runSetupWizard={{ .Values.jenkins.runSetupWizard }} -Dorg.csanchez.jenkins.plugins.kubernetes.pipeline.PodTemplateStepExecution.defaultImage={{ .Values.jenkins.jnlpImage.repo }}:{{ .Values.jenkins.jnlpImage.tag }}"
         - name: INSTALL_MONITORING
           value: 'true'
         - name: TZ
