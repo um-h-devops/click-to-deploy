@@ -73,6 +73,8 @@ spec:
           value: 'true'
         - name: TZ
           value: "{{ .Values.timezone }}"
+        - name: PLUGINS_FORCE_UPGRADE
+          value: 'true'
         resources:
           limits:
             memory: 2.0Gi
